@@ -6,6 +6,9 @@ public class RotationsSkript : MonoBehaviour
     private Rigidbody rb;
     private Quaternion initialRotation;
 
+    [SerializeField]
+    private float Damping = 0.8f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -21,7 +24,7 @@ public class RotationsSkript : MonoBehaviour
         Quaternion targetRotation = Quaternion.Euler(rotation * 90f);
 
         // Dämpft die Rotation
-        float rotationDamping = 5f;
+        float rotationDamping = Damping;
         rb.rotation = Quaternion.Lerp(rb.rotation, initialRotation * targetRotation, Time.deltaTime * rotationDamping);
     }
 }
