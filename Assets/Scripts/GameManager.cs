@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [Header("Frame Settings")]
-    int MaxRate = 9999;
+    int MaxRate = 1000;
     public float TargetFrameRate = 60.0f;
     float currentFrameTime;
     void Awake()

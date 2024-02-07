@@ -24,7 +24,6 @@ public class RotationsSkript : MonoBehaviour
         Quaternion targetRotation = Quaternion.Euler(rotation * 90f);
 
         // Dämpft die Rotation
-        float rotationDamping = Damping;
-        rb.rotation = Quaternion.Lerp(rb.rotation, initialRotation * targetRotation, Time.deltaTime * rotationDamping);
+        rb.rotation = Quaternion.Lerp(rb.rotation, initialRotation * targetRotation, Time.deltaTime * Damping);
     }
 }
