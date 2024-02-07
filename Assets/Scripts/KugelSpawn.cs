@@ -1,9 +1,10 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class KugelSkript : MonoBehaviour
+public class KugelSpawn : MonoBehaviour
 {
     private Rigidbody rb;
+
     private Vector3 initialPosition;
 
     void Start()
@@ -16,16 +17,15 @@ public class KugelSkript : MonoBehaviour
     {
         if (transform.position.y < -20f)
         {
-            RespawnKugel();
+            RespawnKugel(initialPosition);
         }
     }
 
-    void RespawnKugel()
+    public void RespawnKugel(Vector3 position)
     {
-        // Setze die Position der Kugel auf die ursprüngliche Position
-        transform.position = initialPosition;
+        transform.position = position;
 
-        // Setze die Geschwindigkeit auf null, um unerwünschte Bewegung zu verhindern
+        // Setzt die Geschwindigkeit auf null, um unerwünschte Bewegung zu verhindern
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
     }

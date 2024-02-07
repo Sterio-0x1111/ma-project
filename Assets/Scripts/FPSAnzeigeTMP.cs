@@ -12,7 +12,7 @@ public class FPSAnzeige : MonoBehaviour
 
         int fps = Mathf.RoundToInt(1.0f / deltaTime);
 
-        // Aktualisiere den Text im TMP-Text-Element
+        // Aktualisiert den Text im TMP-Text-Element
         fpsText.text = "FPS: " + fps;
     }
 }

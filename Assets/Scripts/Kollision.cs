@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Kollision : MonoBehaviour
 {
-    private bool routine = false;
     private bool Collider = false;
+
     private Collider myCollider;
 
     // Start is called before the first frame update
@@ -14,22 +14,17 @@ public class Kollision : MonoBehaviour
         myCollider = GetComponent<Collider>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Kugel") && !routine)
+        if (other.CompareTag("Kugel") && Goal.isTriggerOn)
         {
+            myCollider.isTrigger = false;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Kugel") && !routine)
+        if (other.CompareTag("Kugel"))
         {
             myCollider.isTrigger = false;
         }

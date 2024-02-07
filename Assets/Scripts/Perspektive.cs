@@ -15,7 +15,7 @@ public class Perspektive : MonoBehaviour
         float targetAspectRatio = 16f / 9f; // 16:9 Verhältnis
         float currentAspectRatio = (float)Screen.width / Screen.height;
 
-        // Passe die Kamera an, wenn das Verhältnis nicht stimmt
+        // Passt die Kamera an, wenn das Verhältnis nicht stimmt
         if (currentAspectRatio != targetAspectRatio)
         {
             Camera.main.aspect = targetAspectRatio;
@@ -31,7 +31,7 @@ public class Perspektive : MonoBehaviour
             float targetAspectRatio = 16f / 9f; // 16:9 Verhältnis
             float currentAspectRatio = (float)Screen.width / Screen.height;
 
-            // Passe die Kamera an, wenn das Verhältnis nicht stimmt
+            // Passt die Kamera an, wenn das Verhältnis nicht stimmt
             if (currentAspectRatio != targetAspectRatio)
             {
                 Camera.main.aspect = targetAspectRatio;
@@ -61,7 +61,7 @@ public class Perspektive : MonoBehaviour
 
     void Start()
     {
-        // Deaktiviere alle Kameras außer der ersten
+        // Deaktiviert alle Kameras außer der ersten
         for (int i = 1; i < cameras.Length; i++)
         {
             cameras[i].gameObject.SetActive(false);
@@ -79,7 +79,7 @@ public class Perspektive : MonoBehaviour
 
     IEnumerator SwitchCamera()
     {
-        // Deaktiviere die aktuelle Kamera
+        // Deaktiviert die aktuelle Kamera
         cameras[currentCameraIndex].gameObject.SetActive(false);
         currentCameraIndex = (currentCameraIndex + 1) % cameras.Length;
         cameras[currentCameraIndex].gameObject.SetActive(true);

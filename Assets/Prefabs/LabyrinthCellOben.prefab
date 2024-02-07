@@ -696,7 +696,7 @@ GameObject:
   - component: {fileID: 9155914800976036331}
   - component: {fileID: 5148419745450784332}
   m_Layer: 0
-  m_Name: LabyrinthCell
+  m_Name: LabyrinthCellOben
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

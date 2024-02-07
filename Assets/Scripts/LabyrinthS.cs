@@ -3,10 +3,15 @@ using UnityEngine;
 public class LabyrinthSkript : MonoBehaviour
 {
     public GameObject wallPrefab;
+
     public int mazeWidth = 5;
+
     public int mazeHeight = 5;
+
     public float wallHeight = 5f;
+
     public float wallThickness = 0.1f;
+
     public Color wallColor = Color.red;
 
     void Start()
@@ -27,7 +32,7 @@ public class LabyrinthSkript : MonoBehaviour
                 GameObject wall = Instantiate(wallPrefab, wallPosition, Quaternion.identity);
                 wall.transform.localScale = new Vector3(1f, wallHeight, wallThickness);
 
-                // Setze die Farbe der Wand
+                // Setzt die Farbe der Wand
                 SetWallColor(wall, wallColor);
             }
         }
