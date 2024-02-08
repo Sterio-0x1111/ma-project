@@ -6,8 +6,11 @@ public class GameManager : MonoBehaviour
 {
     [Header("Frame Settings")]
     int MaxRate = 1000;
+
     public float TargetFrameRate = 60.0f;
+
     float currentFrameTime;
+    
     void Awake()
     {
         QualitySettings.vSyncCount = 0;
@@ -15,6 +18,15 @@ public class GameManager : MonoBehaviour
         currentFrameTime = Time.realtimeSinceStartup;
         StartCoroutine("WaitForNextFrame");
     }
+
+    private void Update()
+    {
+        if (Goal.count == 2)
+        {
+            // wechsel scene: Hauptmenu
+        }
+    }
+
     IEnumerator WaitForNextFrame()
     {
         while (true)

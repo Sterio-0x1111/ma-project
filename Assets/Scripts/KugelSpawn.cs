@@ -10,11 +10,22 @@ public class KugelSpawn : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        initialPosition = transform.position;
     }
 
     void Update()
     {
+        if (Goal.isTriggerOn)
+        {
+            GameObject spawn = GameObject.Find("SpawnZwei");
+            initialPosition = spawn.transform.position;
+        }
+        else
+        {
+            GameObject spawn = GameObject.Find("SpawnEins");
+            initialPosition = spawn.transform.position;
+        }
+
+
         if (transform.position.y < -20f)
         {
             RespawnKugel(initialPosition);

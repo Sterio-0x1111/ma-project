@@ -1,32 +1,40 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Kollision : MonoBehaviour
 {
-    private bool Collider = false;
+    private GameObject colliderObjectO;
 
-    private Collider myCollider;
+    private Collider colliderO;
+
+    private GameObject colliderObjectU;
+
+    private Collider colliderU;
 
     // Start is called before the first frame update
     void Start()
     {
-        myCollider = GetComponent<Collider>();
+        colliderObjectO = GameObject.Find("KollisionOben");
+        colliderO = colliderObjectO.GetComponent<Collider>();
+        
+        colliderObjectU = GameObject.Find("KollisionUnten");
+        colliderU = colliderObjectU.GetComponent<Collider>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Kugel") && Goal.isTriggerOn)
         {
-            myCollider.isTrigger = false;
+            colliderO.isTrigger = true;
+            colliderU.isTrigger = false;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Kugel"))
+        if (other.CompareTag("Kugel") && !Goal.isTriggerOn)
         {
-            myCollider.isTrigger = false;
+            colliderO.isTrigger = false;
+            colliderU.isTrigger = true;
         }
     }
 }

@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Goal : MonoBehaviour
 {
+    public static int count = 0;
+
     [SerializeField]
     private GameObject spawnObjekt;
 
@@ -19,6 +21,7 @@ public class Goal : MonoBehaviour
     {
         if (other.CompareTag("Kugel"))
         {
+            count = 1 + count;
             isTriggerOn = true;
             StartCoroutine(MoveObject());
         }
@@ -39,7 +42,7 @@ public class Goal : MonoBehaviour
         }
 
         // Verschiebt das Spawn-Objekt an eine neue Position
-        GameObject spawn = GameObject.Find("Spawn");
+        GameObject spawn = GameObject.Find("SpawnZwei");
         spawnObjekt.transform.position = spawn.transform.position;
         rendererO.enabled = true;
     }
