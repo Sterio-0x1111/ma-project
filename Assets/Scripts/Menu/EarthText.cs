@@ -7,7 +7,10 @@ using UnityEngine.UI;
 public class NewBehaviourScript : MonoBehaviour
 {
     public TMP_Text text;
-    
+
+    [SerializeField]
+    private int maxNumber;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +20,6 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = Earth.count + " / 4";
+        text.text = Earth.count + " / " + maxNumber;
     }
 }

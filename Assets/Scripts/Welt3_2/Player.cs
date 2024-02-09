@@ -1,5 +1,5 @@
 using UnityEngine;
-using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Rigidbody rb;
 
+    [SerializeField]
+    private Collectible collectibleManager;
+
     private void Start()
     {
         attractor = GetComponent<Attractor>();
@@ -22,10 +25,14 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Respawn") && other.gameObject.name != "SpielBereich")
         {
-            transform.position = spawn.transform.position;
-            transform.eulerAngles = Vector3.zero;
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
+            ResetPlayer();
+            // Aufruf der Reset-Methode des Collectible
+            collectibleManager.ResetCollectibles();
+        }
+
+        if (other.gameObject.tag == "Finish")
+        {
+            SceneManager.LoadScene(0);
         }
     }
 
@@ -33,10 +40,16 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Respawn") && other.gameObject.name == "SpielBereich")
         {
-            transform.position = spawn.transform.position;
-            transform.eulerAngles = Vector3.zero;
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
+            ResetPlayer();
+            collectibleManager.ResetCollectibles();
         }
+    }
+
+    private void ResetPlayer()
+    {
+        transform.position = spawn.transform.position;
+        transform.eulerAngles = Vector3.zero;
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
     }
 }

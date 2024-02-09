@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class GameManager : MonoBehaviour
     {
         if (Goal.count == 2)
         {
-            // wechsel scene: Hauptmenu
+            SceneManager.LoadScene(0);
         }
     }
 

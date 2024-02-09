@@ -7,6 +7,9 @@ public class GoalText : MonoBehaviour
 {
     public TMP_Text text;
 
+    [SerializeField]
+    private int maxNumber;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +19,6 @@ public class GoalText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = Goal.count + " / 2";
+        text.text = Goal.count + " / " + maxNumber;
     }
 }

@@ -20,7 +20,7 @@ public class Earth : MonoBehaviour
     {
         if (other.CompareTag("Kugel"))
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
             count = 1 + count;
         }
     }
