@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
+    path: Assets/Scenes/Menu/Menu.unity
     guid: 895e57eec7319b14a8ea7a1b5350be7e
   - enabled: 1
     path: Assets/Scenes/Welt3_1.unity
@@ -17,6 +17,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Welt3_3.unity
     guid: 18198e6d0f0cb4d478ce7cd27f99641f
+  - enabled: 1
+    path: Assets/Scenes/Menu/Option.unity
+    guid: f4b64a3358e4148458b33f4e4ac3b511
+  - enabled: 1
+    path: Assets/Scenes/Menu/Level1Tut.unity
+    guid: 6536507e6c1c84b46b60a6151829b253
+  - enabled: 1
+    path: Assets/Scenes/Menu/Level2Tut.unity
+    guid: 0d35851ad60c71a42b2f5364ea3bee65
+  - enabled: 1
+    path: Assets/Scenes/Menu/Level3Tut.unity
+    guid: a5bbcfcd5a7ccc642ab7376037f37370
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000,
       guid: 946862562c0c4de4da75f945c0a69b6e, type: 2}

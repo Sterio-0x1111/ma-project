@@ -496,7 +496,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 246184172}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: LoadLevel2
+        m_MethodName: LoadLevel2Tut
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -629,7 +629,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 246184172}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: LoadLevel1
+        m_MethodName: LoadLevel1Tut
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -762,7 +762,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 246184172}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: ExitGame
+        m_MethodName: Option
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1029,7 +1029,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 246184172}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: LoadLevel1
+        m_MethodName: LoadLevel3Tut
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

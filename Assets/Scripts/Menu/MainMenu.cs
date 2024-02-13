@@ -1,18 +1,41 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject popupPrefabLevel1;
+    [SerializeField]
+    private Button qButton;
 
-    public GameObject popupPrefabLevel2;
-    
-    public GameObject popupPrefabLevel3;
+    public static string previousSceneName;
+
+    void Awake()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Goal.count = 0;
+        Earth.count = 0;
+        previousSceneName = scene.name;
+        
+        if (qButton != null)
+        {
+            int currentQualityLevel = QualitySettings.GetQualityLevel();
+            string currentQualityName = QualitySettings.names[currentQualityLevel];
+            qButton.GetComponentInChildren<Text>().text = currentQualityName;
+        }
+    }
 
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public void Exit()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public void Option()
@@ -20,37 +43,58 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(4);
     }
 
+    public void Quality()
+    {
+        int currentQualityLevel = QualitySettings.GetQualityLevel();
+        string currentQualityName = QualitySettings.names[currentQualityLevel];
+        qButton.GetComponentInChildren<Text>().text = currentQualityName;
+
+        int maxQualityLevel = 5;
+        if (currentQualityLevel < maxQualityLevel)
+        {
+            QualitySettings.SetQualityLevel(currentQualityLevel + 1);
+        }
+        else
+        {
+            QualitySettings.SetQualityLevel(0);
+        }
+    }
+
+    public void ResetData()
+    {
+
+    }
+
     public void LoadLevel1()
     {
-        // Zeigt Popup für Level 1 an
-        ShowPopup(popupPrefabLevel1, 1);
+        // Lade Level 1
+        SceneManager.LoadScene(1);
     }
 
     public void LoadLevel2()
     {
-        // Zeigt Popup für Level 2 an
-        ShowPopup(popupPrefabLevel2, 2);
+        // Lade Level 2
+        SceneManager.LoadScene(2);
     }
 
     public void LoadLevel3()
     {
-        // Zeigt Popup für Level 3 an
-        ShowPopup(popupPrefabLevel3, 3);
+        // Lade Level 3
+        SceneManager.LoadScene(3);
     }
 
-    void ShowPopup(GameObject popupPrefab, int levelIndex)
+    public void LoadLevel1Tut()
     {
-        GameObject popup = Instantiate(popupPrefab, Vector3.zero, Quaternion.identity);
-
-        // Startet das Laden des Levels nach dem Popup
-        StartCoroutine(LoadLevel(popup, levelIndex));
+        SceneManager.LoadScene(5);
     }
 
-    IEnumerator LoadLevel(GameObject popup, int levelIndex)
+    public void LoadLevel2Tut()
     {
-        yield return new WaitUntil(() => !popup.activeSelf);
-        
-        // Lädt das entsprechende Level
-        SceneManager.LoadScene(levelIndex);
+        SceneManager.LoadScene(6);
+    }
+
+    public void LoadLevel3Tut()
+    {
+        SceneManager.LoadScene(7);
     }
 }
