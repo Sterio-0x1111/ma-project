@@ -1,5 +1,3 @@
-// Inspiriert von [Q https://youtu.be/_aeYq5BmDMg?t=585]
-
 using UnityEngine;
 
 public class LabyrinthSkript : MonoBehaviour
