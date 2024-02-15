@@ -9,6 +9,8 @@ public class MainMenu : MonoBehaviour
 
     public static string previousSceneName;
 
+    public int currentQualityLevel;
+
     void Awake()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -22,7 +24,7 @@ public class MainMenu : MonoBehaviour
         
         if (qButton != null)
         {
-            int currentQualityLevel = QualitySettings.GetQualityLevel();
+            currentQualityLevel = QualitySettings.GetQualityLevel();
             string currentQualityName = QualitySettings.names[currentQualityLevel];
             qButton.GetComponentInChildren<Text>().text = currentQualityName;
         }
@@ -45,10 +47,6 @@ public class MainMenu : MonoBehaviour
 
     public void Quality()
     {
-        int currentQualityLevel = QualitySettings.GetQualityLevel();
-        string currentQualityName = QualitySettings.names[currentQualityLevel];
-        qButton.GetComponentInChildren<Text>().text = currentQualityName;
-
         int maxQualityLevel = 5;
         if (currentQualityLevel < maxQualityLevel)
         {
@@ -58,11 +56,15 @@ public class MainMenu : MonoBehaviour
         {
             QualitySettings.SetQualityLevel(0);
         }
+
+        currentQualityLevel = QualitySettings.GetQualityLevel();
+        string currentQualityName = QualitySettings.names[currentQualityLevel];
+        qButton.GetComponentInChildren<Text>().text = currentQualityName;
     }
 
     public void ResetData()
     {
-
+        // Nicht implementiert
     }
 
     public void LoadLevel1()
@@ -85,16 +87,19 @@ public class MainMenu : MonoBehaviour
 
     public void LoadLevel1Tut()
     {
+        // Lade das Tutorial
         SceneManager.LoadScene(5);
     }
 
     public void LoadLevel2Tut()
     {
+        // Lade das Tutorial
         SceneManager.LoadScene(6);
     }
 
     public void LoadLevel3Tut()
     {
+        // Lade das Tutorial
         SceneManager.LoadScene(7);
     }
 }
