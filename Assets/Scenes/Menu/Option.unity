@@ -1486,7 +1486,7 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1735919746}
-  - {fileID: 1114386748}
-  - {fileID: 1215325545}
   - {fileID: 958449936}
+  - {fileID: 1215325545}
+  - {fileID: 1114386748}
+  - {fileID: 1735919746}
