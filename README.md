@@ -1,6 +1,5 @@
 # ma-project
 Das Projekt verfügt über ein Pre-Release (3.0.0-alpha), das eine APK-Datei enthält.
-Das gesamte Repository wurde von einer Person erstellt.
 
 ## Um die Dateien in diesem Repository ausführbar zu machen, folgen Sie diesen Schritten:
 - Führen Sie den Befehl git clone aus, um das Repository zu klonen.
